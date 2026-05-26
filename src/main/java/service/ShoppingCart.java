@@ -1,16 +1,14 @@
 package service;
 import model.Food;
-import java.util.Arrays;
 
 public class ShoppingCart {
     private Food[] products;
-    double sum = 0;
     public ShoppingCart(Food[] cartItem) {
-        this.products = Arrays.copyOf(cartItem, cartItem.length);
+        this.products = cartItem;
     }
 
     public double getTotalWithoutDiscount() {
-
+        double sum = 0;
         for (Food product : products){
             sum += product.getAmount() * product.getPrice();
         }
