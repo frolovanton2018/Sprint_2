@@ -6,14 +6,15 @@ public class Main {
     public static void main(String[] args) {
         Food[] products = {
                 new Meat(5, 100),
-                new Apple(10, 50, Colour.RED),
-                new Apple(8, 60, Colour.GREEN)
+                new Apple(10, 50, "Красные"),
+                new Apple(8, 60, "Зелёные")
         };
 
         ShoppingCart cart = new ShoppingCart(products);
 
-        System.out.println("Общая сумма товаров без скидки, " + (int)cart.getTotalWithoutDiscount() + "руб.");
-        System.out.println("Общая сумма товаров со скидкой, " + (int)cart.getTotalWithDiscount() + "руб.");
-        System.out.println("Сумма вегетарианских продуктов без скидки, " + (int)cart.getVegetarianTotalWithoutDiscount() + "руб.");
+        System.out.printf("Общая сумма товаров без скидки %.2f руб. %n" +
+                        "Общая сумма товаров со скидкой %.2f руб. %n" +
+                        "Сумма вегетарианских продуктов без скидки %.2f руб.",
+                cart.getTotalWithoutDiscount(), cart.getTotalWithDiscount(), cart.getVegetarianTotalWithoutDiscount());
     }
 }

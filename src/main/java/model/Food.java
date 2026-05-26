@@ -2,9 +2,15 @@ package model;
 import model.constants.Discount;
 
 public abstract class Food implements Discountable {
-     int amount;
-     double price;
-     boolean isVegetarian;
+    protected int amount;
+    protected double price;
+    protected boolean isVegetarian;
+
+    protected Food(int amount, double price, boolean isVegetarian){
+        this.amount = amount;
+        this.price = price;
+        this.isVegetarian = isVegetarian;
+    }
 
     public int getAmount() {
         return amount;
@@ -15,7 +21,7 @@ public abstract class Food implements Discountable {
     }
 
     public boolean isVegetarian() {
-        return isVegetarian;
+        return isVegetarian = false;
     }
 
     // Дефолтная скидка 0 для всех продуктов
